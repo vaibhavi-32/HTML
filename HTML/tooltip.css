@@ -1,0 +1,19 @@
+body{
+	margin:0;
+	padding:0;
+}
+
+h1{
+	background-color:yellow;
+	text-align:center;
+}
+p{
+	text-align:justify;
+	padding:10px;
+	display:none;
+}
+.a:hover p{
+	display:block;
+	background-color:red;
+	color:white;
+}
