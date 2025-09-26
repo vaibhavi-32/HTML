@@ -1,0 +1,64 @@
+
+<html>
+<head>
+  <title>Form Validation</title>
+  <style>
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="myForm" onsubmit="return validateForm()">
+    Name: <input type="text" id="name"><div class="error" id="nameError"></div><br><br>
+    Email: <input type="text" id="email"><div class="error" id="emailError"></div><br><br>
+    Password: <input type="password" id="password"><div class="error" id="passwordError"></div><br><br>
+    Confirm Password: <input type="password" id="confirmPassword"><span class="error" id="confirmError"></span><br><br>
+    <input type="submit" value="Submit">
+  </form>
+
+  <script>
+    function validateForm() {
+      let isValid = true;
+
+      // Clear previous errors
+      document.getElementById("nameError").textContent = "";
+      document.getElementById("emailError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+      document.getElementById("confirmError").textContent = "";
+
+      // Get values
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+
+      // Name validation
+      if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required";
+        isValid = false;
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        document.getElementById("emailError").textContent = "Invalid email format";
+        isValid = false;
+      }
+
+      // Password validation
+      if (password.length < 6) {
+        document.getElementById("passwordError").textContent = "Password must be at least 6 characters";
+        isValid = false;
+      }
+
+      // Confirm password validation
+      if (password !== confirmPassword) {
+        document.getElementById("confirmError").textContent = "Passwords do not match";
+        isValid = false;
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>

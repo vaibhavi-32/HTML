@@ -1,0 +1,35 @@
+<html>
+<body>
+<h1>JavaScript Dates</h1>
+<h2>The getHours() Method</h2>
+<p>Return the hours of a date as a number (0-23):</p>
+
+<p id="demo"></p>
+
+<script>
+const d = new Date();
+var h=d.getHours();
+if(h>=08 && h<=12)
+{
+
+	document.getElementById("demo").innerHTML = "Good Morning";
+    
+ }
+ else if(h>12 && h<=16)
+ {
+	document.getElementById("demo").innerHTML = "Good Afternoon";
+    
+ }
+ else if(h>16 && h<=19)
+ {
+ 
+ 	document.getElementById("demo").innerHTML = "Good Afternoon";
+ }
+ else
+ {
+ 	document.getElementById("demo").innerHTML = "Good night";
+ }
+</script>
+
+</body>
+</html>
