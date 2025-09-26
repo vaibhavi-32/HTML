@@ -1,0 +1,17 @@
+<html>
+<body>
+<h2>Area of Triangle</h2>
+<input id="base" placeholder="Base"><br><br>
+<input id="height" placeholder="Height"><br><br>
+<button onclick="area()">Calculate</button>
+<p id="result">Area = </p>
+
+<script>
+function area() {
+  let b = Number(document.getElementById("base").value);
+  let h = Number(document.getElementById("height").value);
+  document.getElementById("result").innerText = "Area = " + (0.5 * b * h);
+}
+</script>
+</body>
+</html>
